@@ -82,13 +82,23 @@
       font-family: 'Quicksand', sans-serif;
     }
 
-    /* Floating Animation */
+    /* Floating Molang Animation */
     @keyframes molangFloat {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-10px) rotate(2deg); }
     }
     .animate-molang-float {
       animation: molangFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes earWiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+    }
+    .hover-ear-wiggle:hover .ear-left {
+      animation: earWiggle 0.6s ease-in-out infinite;
+      transform-origin: bottom center;
     }
 
     /* Heart Particle Burst */
@@ -140,8 +150,17 @@
       
       <!-- Logo / Identity -->
       <a href="#hero" class="flex items-center gap-2.5 group">
-        <div class="w-10 h-10 rounded-2xl bg-molang-accent flex items-center justify-center overflow-hidden border border-molang-soft group-hover:scale-105 transition-all">
-          <img src="07E03E68-3256-4A01-9FB6-72AAA629338A.jpeg" alt="Logo" class="w-full h-full object-cover">
+        <div class="w-10 h-10 rounded-2xl bg-molang-accent flex items-center justify-center text-molang-rose border border-molang-soft group-hover:scale-105 transition-all">
+          <svg class="w-6 h-6 fill-current text-molang-rose" viewBox="0 0 100 100">
+            <ellipse cx="50" cy="55" rx="28" ry="24" fill="#FFF" stroke="#FF8FAB" stroke-width="3"/>
+            <ellipse cx="40" cy="28" rx="7" ry="16" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="2" class="ear-left"/>
+            <ellipse cx="60" cy="28" rx="7" ry="16" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="2"/>
+            <ellipse cx="34" cy="58" rx="4" ry="2.5" fill="#FFB3C6"/>
+            <ellipse cx="66" cy="58" rx="4" ry="2.5" fill="#FFB3C6"/>
+            <circle cx="42" cy="53" r="2.2" fill="#4A3E43"/>
+            <circle cx="58" cy="53" r="2.2" fill="#4A3E43"/>
+            <path d="M48 57 Q50 59 52 57" stroke="#4A3E43" stroke-width="1.5"/>
+          </svg>
         </div>
         <div>
           <span class="font-cute font-bold text-lg text-molang-text tracking-tight group-hover:text-molang-rose transition-colors">
@@ -198,11 +217,30 @@
         <div class="absolute -top-16 -right-16 w-48 h-48 bg-molang-rose/15 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -bottom-16 -left-16 w-48 h-48 bg-molang-soft/20 rounded-full blur-3xl pointer-events-none"></div>
 
-        <!-- Profile Avatar -->
-        <div class="relative flex-shrink-0 text-center">
+        <!-- Profile Avatar with Cute Wiggling Ears -->
+        <div class="relative flex-shrink-0 text-center hover-ear-wiggle">
           <div class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-gradient-to-tr from-molang-soft via-molang-accent to-white p-1.5 shadow-md">
-            <div class="w-full h-full rounded-full bg-molang-card flex items-center justify-center overflow-hidden border-2 border-molang-soft relative animate-molang-float">
-              <img src="07E03E68-3256-4A01-9FB6-72AAA629338A.jpeg" alt="Sofia Shane" class="w-full h-full object-cover">
+            <div class="w-full h-full rounded-full bg-molang-card flex items-center justify-center overflow-hidden border-2 border-molang-soft relative">
+              <svg class="w-32 h-32 text-molang-rose animate-molang-float" viewBox="0 0 100 100" fill="none">
+                <!-- Ears -->
+                <ellipse cx="38" cy="25" rx="8" ry="20" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="2.5" class="ear-left"/>
+                <ellipse cx="62" cy="25" rx="8" ry="20" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="2.5"/>
+                <ellipse cx="38" cy="27" rx="4" ry="14" fill="#FFC2D1" class="ear-left"/>
+                <ellipse cx="62" cy="27" rx="4" ry="14" fill="#FFC2D1"/>
+                <!-- Body/Head -->
+                <ellipse cx="50" cy="58" rx="30" ry="26" fill="#FFF" stroke="#FF8FAB" stroke-width="2.5"/>
+                <!-- Cheeks -->
+                <ellipse cx="32" cy="62" rx="4.5" ry="3" fill="#FFB3C6" opacity="0.9"/>
+                <ellipse cx="68" cy="62" rx="4.5" ry="3" fill="#FFB3C6" opacity="0.9"/>
+                <!-- Eyes -->
+                <circle cx="40" cy="56" r="2.5" fill="#4A3E43"/>
+                <circle cx="60" cy="56" r="2.5" fill="#4A3E43"/>
+                <!-- Nose/Mouth -->
+                <path d="M48 60 Q50 62 52 60" stroke="#4A3E43" stroke-width="1.8" stroke-linecap="round"/>
+                <!-- Paws -->
+                <ellipse cx="40" cy="78" rx="5" ry="4" fill="#FFF" stroke="#FF8FAB" stroke-width="2"/>
+                <ellipse cx="60" cy="78" rx="5" ry="4" fill="#FFF" stroke="#FF8FAB" stroke-width="2"/>
+              </svg>
             </div>
             <!-- Online Availability Badge -->
             <div class="absolute bottom-2 right-2 bg-emerald-400 border-2 border-white w-5 h-5 rounded-full shadow-sm" title="Available for Remote Work"></div>
@@ -490,8 +528,17 @@
     </div>
 
     <!-- Mascot Button -->
-    <button id="mascot-btn" onclick="triggerMascotAction(event)" class="w-16 h-16 rounded-full bg-gradient-to-tr from-molang-accent to-white border-2 border-molang-soft shadow-molang hover:scale-110 active:scale-95 transition-all overflow-hidden flex items-center justify-center focus:outline-none" aria-label="Interactive Companion">
-      <img src="07E03E68-3256-4A01-9FB6-72AAA629338A.jpeg" alt="Companion" class="w-full h-full object-cover animate-molang-float">
+    <button id="mascot-btn" onclick="triggerMascotAction(event)" class="w-16 h-16 rounded-full bg-gradient-to-tr from-molang-accent to-white border-2 border-molang-soft shadow-molang hover:scale-110 active:scale-95 transition-all flex items-center justify-center focus:outline-none" aria-label="Interactive Molang Companion">
+      <svg class="w-10 h-10 text-molang-rose animate-molang-float" viewBox="0 0 100 100" fill="none">
+        <ellipse cx="50" cy="55" rx="28" ry="24" fill="#FFF" stroke="#FF8FAB" stroke-width="3"/>
+        <ellipse cx="40" cy="28" rx="7" ry="16" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="2"/>
+        <ellipse cx="60" cy="28" rx="7" ry="16" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="2"/>
+        <ellipse cx="34" cy="58" rx="4" ry="2.5" fill="#FFB3C6"/>
+        <ellipse cx="66" cy="58" rx="4" ry="2.5" fill="#FFB3C6"/>
+        <circle cx="42" cy="53" r="2.2" fill="#4A3E43"/>
+        <circle cx="58" cy="53" r="2.2" fill="#4A3E43"/>
+        <path d="M48 57 Q50 59 52 57" stroke="#4A3E43" stroke-width="1.5"/>
+      </svg>
     </button>
   </div>
 
@@ -504,9 +551,394 @@
 
   <footer class="bg-molang-card border-t border-molang-border py-6 text-center text-xs text-molang-subtext transition-colors duration-400">
     <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p>&copy; 2026 Sofia Shane V. Tomarompong. All rights reserved.</p>
+      <p>© 2026 Sofia Shane V. Tomarompong. All rights reserved.</p>
+      <div class="flex items-center gap-1.5 text-molang-rose font-semibold">
+        <span>Designed with soft pinks & precision</span>
+        <i class="fa-solid fa-heart text-[10px]"></i>
+      </div>
     </div>
   </footer>
 
+  <script>
+    /* Data Objects */
+    const toolsData = [
+      { id: 'slack', name: 'Slack', category: 'comm', icon: 'fa-brands fa-slack', desc: 'Expert in channel organization, automated integrations, instant messaging, and team collaboration.', highlight: 'Daily internal team communication & client chat sync.' },
+      { id: 'gohighlevel', name: 'GoHighLevel', category: 'crm', icon: 'fa-solid fa-chart-line', desc: 'CRM setup, funnel tracking, automation workflows, and prospective client communication management.', highlight: 'Lead tracking & automated follow-up scheduling.' },
+      { id: 'freshdesk', name: 'Freshdesk', category: 'comm', icon: 'fa-solid fa-life-ring', desc: 'Ticketing system navigation, customer query resolution, and helpdesk workflow streamlining.', highlight: 'SLA-compliant customer ticket handling.' },
+      { id: 'clicksend', name: 'Clicksend', category: 'comm', icon: 'fa-solid fa-paper-plane', desc: 'SMS messaging campaigns, transactional updates, and direct outreach execution.', highlight: 'Instant communication & automated notification dispatch.' },
+      { id: 'trackers-qa', name: 'Trackers & QA Tools', category: 'productivity', icon: 'fa-solid fa-list-check', desc: 'Auditing case files, evaluating team productivity metrics, and ensuring high quality assurance standards.', highlight: 'Monitored team performance in VA-Team Lead role.' },
+      { id: 'workfolio', name: 'Workfolio', category: 'productivity', icon: 'fa-solid fa-clock', desc: 'Time tracking, activity monitoring, and workflow efficiency analytics.', highlight: 'Productivity analysis & time management tracking.' },
+      { id: 'microsoft-office', name: 'Microsoft Office', category: 'productivity', icon: 'fa-brands fa-microsoft', desc: 'Proficient in Excel spreadsheet data analysis, Word documentation, and PowerPoint presentations.', highlight: 'Professional administrative documentation.' },
+      { id: 'social-media', name: 'Social Media Platforms', category: 'comm', icon: 'fa-solid fa-share-nodes', desc: 'Content posting support, community engagement, and inbox monitoring across major platforms.', highlight: 'Brand communication & client social engagement.' },
+      { id: 'crm-systems', name: 'CRM Systems', category: 'crm', icon: 'fa-solid fa-users', desc: 'Maintaining customer databases, updating records, and tracking interaction pipelines.', highlight: 'Comprehensive client relationship management.' },
+      { id: 'google-workspace', name: 'Google Workspace Tools', category: 'productivity', icon: 'fa-brands fa-google', desc: 'Google Docs, Sheets, Slides, Drive file structure, and Gmail inbox management.', highlight: 'Seamless cloud file management & scheduling.' },
+      { id: 'adv', name: 'ADV Database System', category: 'crm', icon: 'fa-solid fa-database', desc: 'Database administration, record updates, and data verification tasks.', highlight: 'High accuracy data entry & records keeping.' },
+      { id: 'amadeus', name: 'Amadeus GDS', category: 'gds', icon: 'fa-solid fa-plane-departure', desc: 'Global Distribution System proficiency for flight reservations, itineraries, and travel support.', highlight: 'End-to-end travel management & booking support.' },
+      { id: 'sabre', name: 'Sabre GDS', category: 'gds', icon: 'fa-solid fa-ticket', desc: 'Reservations management, ticketing assistance, and passenger travel coordination.', highlight: 'GDS travel scheduling and itinerary coordination.' },
+      // Soft Skills
+      { id: 'customer-service', name: 'Customer Service Support', category: 'softskill', icon: 'fa-solid fa-hand-holding-heart', desc: 'Top-tier customer interaction, empathetic conflict resolution, and high satisfaction ratings.', highlight: 'Proven 2+ years experience at Foundever.' },
+      { id: 'executive-assistance', name: 'Executive & Admin Assistance', category: 'softskill', icon: 'fa-solid fa-user-gear', desc: 'Executive calendar oversight, inbox management, travel arrangements, and confidential tasks.', highlight: 'Direct C-level and remote business support.' },
+      { id: 'recruitment-coord', name: 'Recruitment Coordination', category: 'softskill', icon: 'fa-solid fa-user-plus', desc: 'Scheduling candidate interviews, ATS record maintenance, and HR team support.', highlight: 'Managed talent admin at Cielo Talent Inc.' },
+      { id: 'tech-troubleshooting', name: 'Technical Troubleshooting', category: 'softskill', icon: 'fa-solid fa-wrench', desc: 'Step-by-step technical problem resolution and client guidance.', highlight: 'Delivered tech support at VXI Global Solutions.' }
+    ];
+
+    const experienceData = [
+      {
+        role: 'Executive Assistant',
+        company: 'Remote Work Support',
+        period: 'August 2026 – Present',
+        location: 'Remote',
+        summary: 'Provide executive and administrative support in a high-efficiency remote environment.',
+        bullets: [
+          'Manage high-level correspondence, email inbox triage, and calendar scheduling.',
+          'Prepare administrative documentation, report summaries, and daily operational logs.',
+          'Coordinate cross-functional tasks and streamline executive workflow.'
+        ]
+      },
+      {
+        role: 'VA - Team Leader',
+        company: 'Australian Client Operations',
+        period: 'February 2026 – Present',
+        location: 'Remote',
+        summary: 'Lead a case investigation and management team supporting Australian clients.',
+        bullets: [
+          'Monitor team performance, quality assurance (QA) scores, and productivity trackers.',
+          'Provide daily operational guidance, coaching, and workflow troubleshooting.',
+          'Ensure case investigations are completed accurately within strict timeline SLAs.'
+        ]
+      },
+      {
+        role: 'Virtual Assistant',
+        company: 'Remote Services',
+        period: 'November 2025 – January 2026',
+        location: 'Remote',
+        summary: 'Provided versatile administrative and operational support to global clients.',
+        bullets: [
+          'Handled daily administrative duties, calendar booking, and email inbox management.',
+          'Executed high-accuracy data entry and organized digital cloud file systems.',
+          'Assisted with proactive customer follow-ups and service communications.'
+        ]
+      },
+      {
+        role: 'Talent Administrator and Coordinator',
+        company: 'Cielo Talent Inc.',
+        period: 'April 2025 – October 2025',
+        location: 'Remote',
+        summary: 'Supported talent acquisition and recruitment processes across candidate pipelines.',
+        bullets: [
+          'Coordinated interview schedules between candidates and hiring managers.',
+          'Maintained Applicant Tracking Systems (ATS) and ensured data integrity.',
+          'Facilitated candidate communications and onboarding documentation.'
+        ]
+      },
+      {
+        role: 'Customer Service Representative / Mentor',
+        company: 'Foundever',
+        period: 'February 2023 – January 2025',
+        location: 'Quezon City, PH',
+        summary: 'Delivered customer assistance while mentoring incoming service agents.',
+        bullets: [
+          'Resolved customer inquiries efficiently maintaining high CSAT scores.',
+          'Mentored new hires during nesting phases to improve team performance.',
+          'Assisted team leaders with metric tracking and quality monitoring.'
+        ]
+      },
+      {
+        role: 'Technical Service Representative',
+        company: 'VXI Global Solutions',
+        period: 'June 2022 – January 2023',
+        location: 'Quezon City, PH',
+        summary: 'Provided step-by-step technical support and system troubleshooting.',
+        bullets: [
+          'Diagnosed technical problems and guided users through structured solutions.',
+          'Maintained timely issue resolution and logged support ticket details.'
+        ]
+      }
+    ];
+
+    /* Initialization */
+    window.onload = function() {
+      renderTools('all');
+      renderExperience();
+      init3DTilt();
+      initMouseHeartTrail();
+    };
+
+    /* Render Tools Grid */
+    function renderTools(categoryFilter = 'all', searchQuery = '') {
+      const container = document.getElementById('tools-container');
+      container.innerHTML = '';
+
+      const filtered = toolsData.filter(item => {
+        const matchesCategory = (categoryFilter === 'all') || (item.category === categoryFilter);
+        const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                              item.desc.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if(filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-8 text-center text-molang-subtext text-xs">
+            No tools or skills match your search query. 🌸
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(tool => {
+        const card = document.createElement('div');
+        card.className = 'tool-card bg-molang-card p-4 rounded-2xl border border-molang-border shadow-sm hover:shadow-molang hover:-translate-y-1 transition-all cursor-pointer flex items-center gap-3';
+        card.onclick = () => openToolModal(tool);
+        
+        card.innerHTML = `
+          <div class="w-10 h-10 rounded-xl bg-molang-accent flex items-center justify-center text-molang-rose shrink-0 border border-molang-soft">
+            <i class="${tool.icon} text-base"></i>
+          </div>
+          <div class="overflow-hidden">
+            <h4 class="text-xs sm:text-sm font-bold text-molang-text truncate">${tool.name}</h4>
+            <span class="text-[10px] text-molang-subtext font-medium truncate block">Click for details</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    /* Filter Tools Function */
+    function filterTools(category) {
+      document.querySelectorAll('.tool-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-molang-rose', 'text-white', 'shadow-sm');
+        btn.classList.add('bg-molang-card', 'text-molang-subtext');
+      });
+
+      const activeBtn = document.getElementById(`tab-${category}`);
+      if(activeBtn) {
+        activeBtn.classList.remove('bg-molang-card', 'text-molang-subtext');
+        activeBtn.classList.add('bg-molang-rose', 'text-white', 'shadow-sm');
+      }
+
+      const searchVal = document.getElementById('tool-search').value;
+      renderTools(category, searchVal);
+    }
+
+    /* Search Tools Function */
+    function searchTools() {
+      const searchVal = document.getElementById('tool-search').value;
+      renderTools('all', searchVal);
+    }
+
+    /* Tool Detail Modal Controls */
+    function openToolModal(tool) {
+      const modal = document.getElementById('tool-modal');
+      const card = document.getElementById('modal-card');
+      
+      document.getElementById('modal-title').innerText = tool.name;
+      document.getElementById('modal-category').innerText = tool.category.toUpperCase();
+      document.getElementById('modal-desc').innerText = tool.desc;
+      document.getElementById('modal-highlight').innerText = tool.highlight;
+      document.getElementById('modal-icon').innerHTML = `<i class="${tool.icon}"></i>`;
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        card.classList.remove('scale-95', 'opacity-0');
+        card.classList.add('scale-100', 'opacity-100');
+      }, 20);
+    }
+
+    function closeToolModal() {
+      const modal = document.getElementById('tool-modal');
+      const card = document.getElementById('modal-card');
+
+      card.classList.remove('scale-100', 'opacity-100');
+      card.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 200);
+    }
+
+    /* Render Experience Timeline */
+    function renderExperience() {
+      const container = document.getElementById('experience-list');
+      container.innerHTML = '';
+
+      experienceData.forEach((exp, idx) => {
+        const item = document.createElement('div');
+        item.className = 'relative flex flex-col md:flex-row items-start group';
+
+        item.innerHTML = `
+          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-molang-card border-2 border-molang-rose text-molang-rose shadow-md z-10 shrink-0 md:mx-auto">
+            <i class="fa-solid fa-star text-xs"></i>
+          </div>
+          <div class="w-full md:w-[calc(50%-2.5rem)] ml-12 md:ml-0 bg-molang-card p-6 rounded-[28px] border border-molang-border shadow-molang hover:shadow-molang-hover transition-all duration-300 md:group-even:ml-auto">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-bold text-molang-rose bg-molang-accent px-3 py-1 rounded-full">${exp.period}</span>
+              <span class="text-xs font-semibold text-molang-subtext"><i class="fa-solid fa-location-dot text-xs mr-1 text-molang-rose"></i>${exp.location}</span>
+            </div>
+            <h3 class="text-lg font-bold text-molang-text">${exp.role}</h3>
+            <p class="text-xs text-molang-rose font-bold mb-2">${exp.company}</p>
+            <p class="text-xs text-molang-subtext mb-3">${exp.summary}</p>
+            
+            <button onclick="toggleExpBullets(${idx})" class="text-xs font-bold text-molang-rose hover:underline flex items-center gap-1 focus:outline-none">
+              <span>View Key Tasks</span>
+              <i id="exp-chevron-${idx}" class="fa-solid fa-chevron-down text-[10px] transition-transform"></i>
+            </button>
+
+            <ul id="exp-bullets-${idx}" class="hidden text-xs sm:text-sm text-molang-text space-y-2 list-disc list-inside mt-3 border-t border-molang-border pt-3">
+              ${exp.bullets.map(b => `<li>${b}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function toggleExpBullets(idx) {
+      const bullets = document.getElementById(`exp-bullets-${idx}`);
+      const chevron = document.getElementById(`exp-chevron-${idx}`);
+      
+      if(bullets.classList.contains('hidden')) {
+        bullets.classList.remove('hidden');
+        chevron.classList.add('rotate-180');
+      } else {
+        bullets.classList.add('hidden');
+        chevron.classList.remove('rotate-180');
+      }
+    }
+
+    /* Dark Mode Toggle */
+    function toggleDarkMode() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      const themeIcon = document.getElementById('theme-icon');
+      
+      if(isDark) {
+        themeIcon.className = 'fa-solid fa-sun text-sm text-amber-300';
+        showToast('Switched to Soft Night Lavender Theme 🌙');
+      } else {
+        themeIcon.className = 'fa-solid fa-moon text-sm';
+        showToast('Switched to Soft Pink Day Theme 🌸');
+      }
+    }
+
+    /* Copy to Clipboard Function */
+    function copyToClipboard(text, message) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(message);
+      } catch (err) {
+        showToast('Clipboard access error.');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    /* Toast Notification Display */
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      
+      toastMsg.innerText = message;
+      toast.classList.remove('translate-x-72', 'opacity-0');
+      toast.classList.add('translate-x-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-x-0', 'opacity-100');
+        toast.classList.add('translate-x-72', 'opacity-0');
+      }, 3000);
+    }
+
+    /* Apply Preset to Contact Form */
+    function applyPreset(subject, message) {
+      document.getElementById('form-subject').value = subject;
+      document.getElementById('form-message').value = message;
+      showToast('Form preset loaded! 💖');
+    }
+
+    /* Contact Form Submit Handler */
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      showToast('Inquiry sent successfully! Sofia will contact you soon. 💕');
+      event.target.reset();
+    }
+
+    /* Mascot Interactive Companion Quotes */
+    const mascotQuotes = [
+      "Sofia is detail-oriented and very fast at responding! 💖",
+      "GDS Sabre & Amadeus? Sofia has that covered! ✈️",
+      "Looking for a reliable VA or EA? You found her! 🌸",
+      "Have a lovely day ahead! ✨",
+      "Soft pink vibes, maximum productivity! 🎀"
+    ];
+    let mascotIdx = 0;
+
+    function triggerMascotAction(event) {
+      const bubble = document.getElementById('mascot-bubble');
+      const text = document.getElementById('mascot-text');
+
+      text.innerText = mascotQuotes[mascotIdx];
+      mascotIdx = (mascotIdx + 1) % mascotQuotes.length;
+      bubble.classList.remove('hidden');
+
+      // Create Heart Effect at Mascot position
+      createHeart(event.clientX, event.clientY);
+    }
+
+    /* Mouse Heart Particle Effect */
+    function createHeart(x, y) {
+      const heart = document.createElement('div');
+      heart.className = 'heart-particle text-molang-rose';
+      heart.style.left = `${x}px`;
+      heart.style.top = `${y}px`;
+      heart.innerHTML = '<i class="fa-solid fa-heart text-base"></i>';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 1200);
+    }
+
+    function initMouseHeartTrail() {
+      let lastTime = 0;
+      window.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastTime > 400) {
+          createHeart(e.clientX, e.clientY);
+          lastTime = now;
+        }
+      });
+    }
+
+    /* 3D Tilt Effect on Desktop */
+    function init3DTilt() {
+      const cards = document.querySelectorAll('.tilt-card');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          if(window.innerWidth < 768) return;
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = ((y - centerY) / centerY) * -4;
+          const rotateY = ((x - centerX) / centerX) * 4;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+        });
+      });
+    }
+
+    /* Mobile Drawer Toggle */
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
