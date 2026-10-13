@@ -145,68 +145,46 @@
 </head>
 <body class="relative min-h-screen flex flex-col justify-between selection:bg-molang-soft selection:text-molang-text">
 
-  <header class="sticky top-0 z-40 bg-molang-card/85 backdrop-blur-md border-b border-molang-border transition-colors duration-400">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      
-      <!-- Logo / Identity -->
-      <a href="#hero" class="flex items-center gap-2.5 group">
-        <div class="w-10 h-10 rounded-2xl bg-molang-accent flex items-center justify-center text-molang-rose border border-molang-soft group-hover:scale-105 transition-all">
-          <svg class="w-6 h-6 fill-current text-molang-rose" viewBox="0 0 100 100">
-            <ellipse cx="50" cy="55" rx="28" ry="24" fill="#FFF" stroke="#FF8FAB" stroke-width="3"/>
-            <ellipse cx="40" cy="28" rx="7" ry="16" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="2" class="ear-left"/>
-            <ellipse cx="60" cy="28" rx="7" ry="16" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="2"/>
-            <ellipse cx="34" cy="58" rx="4" ry="2.5" fill="#FFB3C6"/>
-            <ellipse cx="66" cy="58" rx="4" ry="2.5" fill="#FFB3C6"/>
-            <circle cx="42" cy="53" r="2.2" fill="#4A3E43"/>
-            <circle cx="58" cy="53" r="2.2" fill="#4A3E43"/>
-            <path d="M48 57 Q50 59 52 57" stroke="#4A3E43" stroke-width="1.5"/>
-          </svg>
+      <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-pink-300 dark:border-purple-500 shadow-sm group-hover:scale-105 transition-transform">
+                    <!-- Updated with your photo filename -->
+                    <img src="07E03E68-3256-4A01-9FB6-72AAA629338A.jpeg" alt="Sofia Shane" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="font-bold text-slate-800 dark:text-white tracking-tight text-lg block leading-tight">Sofia Shane</span>
+                    <span class="text-xs text-pink-500 dark:text-purple-400 font-medium">Professional Portfolio</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="hover:text-pink-500 dark:hover:text-purple-400 transition-colors">About</a>
+                <a href="#experience" class="hover:text-pink-500 dark:hover:text-purple-400 transition-colors">Experience</a>
+                <a href="#tools" class="hover:text-pink-500 dark:hover:text-purple-400 transition-colors">Tools & Skills</a>
+                <a href="#contact" class="hover:text-pink-500 dark:hover:text-purple-400 transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button id="themeToggle" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-pink-500 dark:text-purple-400 hover:scale-110 transition-transform shadow-sm" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-pink-400 hover:bg-pink-500 text-white dark:bg-purple-600 dark:hover:bg-purple-700 px-5 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all">
+                    <i class="fa-solid fa-paper-plane text-xs"></i> Hire Me
+                </a>
+            </div>
         </div>
-        <div>
-          <span class="font-cute font-bold text-lg text-molang-text tracking-tight group-hover:text-molang-rose transition-colors">
-            Sofia Shane <span class="text-molang-rose">.</span>
-          </span>
-          <p class="text-[10px] text-molang-subtext font-medium leading-none hidden sm:block">Executive & Virtual Assistant</p>
-        </div>
-      </a>
+    </header>
 
-      <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-molang-subtext">
-        <a href="#about" class="px-3 py-1.5 rounded-full hover:text-molang-rose hover:bg-molang-accent/60 transition-all">About</a>
-        <a href="#experience" class="px-3 py-1.5 rounded-full hover:text-molang-rose hover:bg-molang-accent/60 transition-all">Experience</a>
-        <a href="#tools-skills" class="px-3 py-1.5 rounded-full hover:text-molang-rose hover:bg-molang-accent/60 transition-all">Tools & Skills</a>
-        <a href="#education" class="px-3 py-1.5 rounded-full hover:text-molang-rose hover:bg-molang-accent/60 transition-all">Education</a>
-        <a href="#contact" class="px-3 py-1.5 rounded-full hover:text-molang-rose hover:bg-molang-accent/60 transition-all">Contact</a>
-      </nav>
-
-      <!-- Right Action Group (Theme Toggle + Hire Button) -->
-      <div class="flex items-center gap-3">
-        <!-- Theme Mode Toggle -->
-        <button id="theme-toggle" onclick="toggleDarkMode()" class="w-10 h-10 rounded-2xl bg-molang-accent border border-molang-soft flex items-center justify-center text-molang-text hover:text-molang-rose transition-all shadow-sm focus:outline-none" aria-label="Toggle Theme">
-          <i id="theme-icon" class="fa-solid fa-moon text-sm"></i>
-        </button>
-
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-molang-rose text-white text-xs font-semibold hover:bg-molang-deep transition-all shadow-sm hover:shadow-md active:scale-95">
-          <span>Hire Sofia</span>
-          <i class="fa-solid fa-sparkles text-[10px]"></i>
-        </a>
-
-        <!-- Mobile Menu Hamburger -->
-        <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-2xl bg-molang-accent text-molang-text hover:bg-molang-soft focus:outline-none transition-all">
-          <i class="fa-solid fa-bars text-lg"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Drawer Navigation -->
-    <div id="mobile-menu" class="hidden md:hidden bg-molang-card border-b border-molang-border px-4 py-4 space-y-2 text-sm font-medium shadow-lg transition-all">
-      <a href="#about" class="block px-4 py-2.5 rounded-2xl hover:bg-molang-accent text-molang-text">About Sofia</a>
-      <a href="#experience" class="block px-4 py-2.5 rounded-2xl hover:bg-molang-accent text-molang-text">Experience Timeline</a>
-      <a href="#tools-skills" class="block px-4 py-2.5 rounded-2xl hover:bg-molang-accent text-molang-text">Tools Showcase & Skills</a>
-      <a href="#education" class="block px-4 py-2.5 rounded-2xl hover:bg-molang-accent text-molang-text">Education & Reference</a>
-      <a href="#contact" class="block px-4 py-2.5 rounded-2xl bg-molang-rose text-white text-center font-bold">Contact & Hire</a>
-    </div>
-  </header>
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 text-center md:text-left space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100 dark:bg-purple-950/60 text-pink-600 dark:text-purple-300 text-xs font-bold tracking-wide uppercase shadow-inner">
+                <i class="fa-solid fa-sparkles"></i> Welcome to my professional space
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-800 dark:text-white leading-tight">
 
   <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20 space-y-20">
 
