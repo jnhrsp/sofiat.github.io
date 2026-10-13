@@ -216,4 +216,297 @@
         <!-- Main Profile Info -->
         <div class="flex-grow text-center md:text-left space-y-4">
           <div>
-            <span class="text-xs uppercase tracking-widest font-extrabold text
+            <span class="text-xs uppercase tracking-widest font-extrabold text-molang-rose bg-molang-accent/80 px-3 py-1 rounded-full border border-molang-soft">
+              Executive & Virtual Assistant
+            </span>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-molang-text mt-3">
+              Sofia Shane V. Tomarompong
+            </h1>
+            <p class="text-molang-subtext font-medium text-xs sm:text-sm mt-1 flex items-center justify-center md:justify-start gap-2">
+              <i class="fa-solid fa-location-dot text-molang-rose"></i> Quezon City, Philippines • Remote Work Expert
+            </p>
+          </div>
+
+          <p id="about" class="text-molang-text text-sm sm:text-base leading-relaxed max-w-2xl">
+            Detail-oriented and results-driven professional with experience in customer service, talent coordination, virtual assistance, and executive support. Proven ability to manage administrative tasks, support clients remotely, coordinate operations, and deliver high-quality service in fast-paced environments.
+          </p>
+
+          <!-- Interactive Quick Contact Buttons -->
+          <div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3">
+            <button onclick="copyToClipboard('tsofiashane@gmail.com', 'Email address copied to clipboard!')" class="inline-flex items-center gap-2 bg-molang-accent hover:bg-molang-soft text-molang-text px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all shadow-sm hover:shadow active:scale-95 border border-molang-soft">
+              <i class="fa-regular fa-envelope text-molang-rose"></i>
+              <span>tsofiashane@gmail.com</span>
+              <i class="fa-regular fa-copy ml-1 text-xs text-molang-subtext"></i>
+            </button>
+
+            <button onclick="copyToClipboard('09216585069', 'Phone number copied!')" class="inline-flex items-center gap-2 bg-molang-accent hover:bg-molang-soft text-molang-text px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all shadow-sm hover:shadow active:scale-95 border border-molang-soft">
+              <i class="fa-solid fa-phone text-molang-rose"></i>
+              <span>09216585069</span>
+              <i class="fa-regular fa-copy ml-1 text-xs text-molang-subtext"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="tools-skills" class="scroll-mt-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="flex items-center gap-3 mb-1">
+            <div class="w-10 h-10 rounded-2xl bg-molang-accent flex items-center justify-center text-molang-rose text-lg shadow-sm border border-molang-soft">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-molang-text">Tools Showcase & Competencies</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-molang-subtext ml-13">Explore Sofia's tech stack. Click any tool card for application details!</p>
+        </div>
+
+        <!-- Search Input Bar -->
+        <div class="relative w-full md:w-64">
+          <input type="text" id="tool-search" oninput="searchTools()" placeholder="Search tools or skills..." class="w-full px-4 py-2.5 pl-10 rounded-2xl bg-molang-card border border-molang-border text-xs sm:text-sm text-molang-text focus:outline-none focus:border-molang-rose focus:ring-1 focus:ring-molang-rose transition-all shadow-sm">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-xs text-molang-subtext"></i>
+        </div>
+      </div>
+
+      <!-- Filter Category Buttons -->
+      <div class="flex items-center gap-2 mb-6 overflow-x-auto pb-2 scrollbar-none">
+        <button onclick="filterTools('all')" id="tab-all" class="tool-tab-btn active-tab px-4 py-2 rounded-2xl text-xs font-bold bg-molang-rose text-white shadow-sm transition-all shrink-0">
+          All Tools & Skills
+        </button>
+        <button onclick="filterTools('comm')" id="tab-comm" class="tool-tab-btn px-4 py-2 rounded-2xl text-xs font-bold bg-molang-card text-molang-subtext border border-molang-border hover:border-molang-soft transition-all shrink-0">
+          Communication & Support
+        </button>
+        <button onclick="filterTools('crm')" id="tab-crm" class="tool-tab-btn px-4 py-2 rounded-2xl text-xs font-bold bg-molang-card text-molang-subtext border border-molang-border hover:border-molang-soft transition-all shrink-0">
+          CRM & Operations
+        </button>
+        <button onclick="filterTools('gds')" id="tab-gds" class="tool-tab-btn px-4 py-2 rounded-2xl text-xs font-bold bg-molang-card text-molang-subtext border border-molang-border hover:border-molang-soft transition-all shrink-0">
+          Travel & GDS
+        </button>
+        <button onclick="filterTools('productivity')" id="tab-productivity" class="tool-tab-btn px-4 py-2 rounded-2xl text-xs font-bold bg-molang-card text-molang-subtext border border-molang-border hover:border-molang-soft transition-all shrink-0">
+          Productivity & QA
+        </button>
+        <button onclick="filterTools('softskill')" id="tab-softskill" class="tool-tab-btn px-4 py-2 rounded-2xl text-xs font-bold bg-molang-card text-molang-subtext border border-molang-border hover:border-molang-soft transition-all shrink-0">
+          Core Soft Skills
+        </button>
+      </div>
+
+      <!-- Tools Grid -->
+      <div id="tools-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <!-- Dynamic Cards Inserted via JS for Tool Modal triggers -->
+      </div>
+    </section>
+
+    <section id="experience" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="w-10 h-10 rounded-2xl bg-molang-accent flex items-center justify-center text-molang-rose text-lg shadow-sm border border-molang-soft">
+          <i class="fa-solid fa-briefcase"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-molang-text">Professional Experience</h2>
+          <p class="text-xs sm:text-sm text-molang-subtext">Click any role to toggle key achievements and details</p>
+        </div>
+      </div>
+
+      <!-- Timeline Structure -->
+      <div id="experience-list" class="space-y-6 relative before:absolute before:inset-0 before:left-5 md:before:left-1/2 before:-translate-x-px before:h-full before:w-0.5 before:bg-molang-soft/40">
+        <!-- Injected via JavaScript for dynamic accordion toggles -->
+      </div>
+    </section>
+
+    <section id="education" class="scroll-mt-24">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Education Info -->
+        <div class="md:col-span-2 bg-molang-card p-6 sm:p-8 rounded-[32px] border border-molang-border shadow-molang flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-2xl bg-molang-accent flex items-center justify-center text-molang-rose text-lg shadow-sm border border-molang-soft">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <h2 class="text-xl font-bold text-molang-text">Education Background</h2>
+            </div>
+            
+            <div class="p-5 rounded-2xl bg-molang-accent/40 border border-molang-soft">
+              <span class="text-xs font-bold text-molang-rose bg-molang-card px-3 py-1 rounded-full border border-molang-soft inline-block mb-2">Undergraduate Degree</span>
+              <h3 class="text-base font-bold text-molang-text">Bachelor of Science in Psychology</h3>
+              <p class="text-xs sm:text-sm text-molang-subtext mt-1">
+                <i class="fa-solid fa-university text-xs mr-1 text-molang-rose"></i> University of The East, Philippines
+              </p>
+            </div>
+          </div>
+
+          <p class="text-xs text-molang-subtext mt-4 italic bg-molang-accent/20 p-3 rounded-xl border border-molang-soft/50">
+            "My Psychology background equips me with high emotional intelligence, deep active listening, conflict resolution skills, and clear communication—essential for client and team success."
+          </p>
+        </div>
+
+        <!-- Languages & References -->
+        <div class="bg-molang-card p-6 sm:p-8 rounded-[32px] border border-molang-border shadow-molang flex flex-col justify-between space-y-6">
+          <!-- Languages -->
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-2xl bg-molang-accent flex items-center justify-center text-molang-rose text-lg shadow-sm border border-molang-soft">
+                <i class="fa-solid fa-language"></i>
+              </div>
+              <h2 class="text-xl font-bold text-molang-text">Languages</h2>
+            </div>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-1">
+                  <span class="text-molang-text">English</span>
+                  <span class="text-molang-rose font-bold">Fluent</span>
+                </div>
+                <div class="w-full h-2.5 bg-molang-accent rounded-full overflow-hidden">
+                  <div class="h-full bg-molang-rose w-[95%] rounded-full"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs font-semibold mb-1">
+                  <span class="text-molang-text">Filipino</span>
+                  <span class="text-molang-rose font-bold">Native</span>
+                </div>
+                <div class="w-full h-2.5 bg-molang-accent rounded-full overflow-hidden">
+                  <div class="h-full bg-molang-rose w-full rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Reference -->
+          <div class="pt-4 border-t border-molang-border">
+            <h3 class="text-xs font-bold text-molang-subtext uppercase tracking-wider mb-2">Professional Reference</h3>
+            <p class="text-xs font-bold text-molang-text">Richie Dave Macabuhay</p>
+            <p class="text-[11px] text-molang-subtext">Previous Co-worker</p>
+            <button onclick="copyToClipboard('rdave.mclife@gmail.com', 'Reference email copied!')" class="text-[11px] text-molang-rose font-semibold hover:underline mt-1 block">
+              <i class="fa-regular fa-envelope mr-1"></i> rdave.mclife@gmail.com
+            </button>
+            <p class="text-[11px] text-molang-subtext"><i class="fa-solid fa-phone mr-1 text-[10px]"></i> 09627210136</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="scroll-mt-24">
+      <div class="bg-molang-card rounded-[32px] p-6 sm:p-10 shadow-molang border border-molang-border relative overflow-hidden">
+        
+        <div class="max-w-2xl mx-auto text-center mb-8">
+          <div class="w-12 h-12 rounded-2xl bg-molang-accent mx-auto flex items-center justify-center text-molang-rose text-xl shadow-sm mb-3 border border-molang-soft">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-molang-text">Get In Touch With Sofia</h2>
+          <p class="text-xs sm:text-sm text-molang-subtext mt-1">Select a role preset or custom message to reach out directly!</p>
+        </div>
+
+        <!-- Quick Inquiry Service Selector Builder -->
+        <div class="max-w-xl mx-auto mb-6">
+          <label class="block text-xs font-bold text-molang-text mb-2">Quick Inquiry Service Presets:</label>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" onclick="applyPreset('Executive Assistant Role', 'Hi Sofia, we are looking for a dedicated Executive Assistant to manage calendar, communications, and daily executive tasks.')" class="preset-btn px-3 py-1.5 rounded-2xl text-xs font-semibold bg-molang-accent text-molang-text hover:bg-molang-soft border border-molang-soft transition-all">
+              👑 Executive Assistance
+            </button>
+            <button type="button" onclick="applyPreset('Virtual Assistant Role', 'Hi Sofia, I am interested in hiring you as a Virtual Assistant for administrative support and data management.')" class="preset-btn px-3 py-1.5 rounded-2xl text-xs font-semibold bg-molang-accent text-molang-text hover:bg-molang-soft border border-molang-soft transition-all">
+              💼 Virtual Assistance
+            </button>
+            <button type="button" onclick="applyPreset('Team Lead / QA Specialist', 'Hi Sofia, we need a Team Leader with QA tracking experience for our operations.')" class="preset-btn px-3 py-1.5 rounded-2xl text-xs font-semibold bg-molang-accent text-molang-text hover:bg-molang-soft border border-molang-soft transition-all">
+              📊 Team Leadership
+            </button>
+            <button type="button" onclick="applyPreset('Travel & GDS Booking', 'Hi Sofia, we are looking for a remote support agent proficient in Amadeus and Sabre systems.')" class="preset-btn px-3 py-1.5 rounded-2xl text-xs font-semibold bg-molang-accent text-molang-text hover:bg-molang-soft border border-molang-soft transition-all">
+              ✈️ Travel & GDS
+            </button>
+          </div>
+        </div>
+
+        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="max-w-xl mx-auto space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-molang-text mb-1">Your Name</label>
+              <input type="text" id="form-name" required placeholder="e.g. Alex Smith" class="w-full px-4 py-3 rounded-2xl bg-molang-bg border border-molang-border text-xs sm:text-sm text-molang-text focus:outline-none focus:border-molang-rose transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-molang-text mb-1">Your Email</label>
+              <input type="email" id="form-email" required placeholder="e.g. alex@company.com" class="w-full px-4 py-3 rounded-2xl bg-molang-bg border border-molang-border text-xs sm:text-sm text-molang-text focus:outline-none focus:border-molang-rose transition-all">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-molang-text mb-1">Subject</label>
+            <input type="text" id="form-subject" required placeholder="Project or Position Opportunity" class="w-full px-4 py-3 rounded-2xl bg-molang-bg border border-molang-border text-xs sm:text-sm text-molang-text focus:outline-none focus:border-molang-rose transition-all">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-molang-text mb-1">Message</label>
+            <textarea id="form-message" rows="4" required placeholder="Write your inquiry here..." class="w-full px-4 py-3 rounded-2xl bg-molang-bg border border-molang-border text-xs sm:text-sm text-molang-text focus:outline-none focus:border-molang-rose transition-all resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 px-6 rounded-2xl bg-molang-rose text-white font-bold text-sm hover:bg-molang-deep transition-all shadow-md hover:shadow-lg active:scale-98 flex items-center justify-center gap-2">
+            <span>Send Inquiry Message</span>
+            <i class="fa-solid fa-heart text-xs"></i>
+          </button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="tool-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop transition-all duration-300">
+    <div class="bg-molang-card rounded-[32px] border border-molang-border p-6 sm:p-8 max-w-md w-full shadow-2xl relative transform transition-all scale-95 opacity-0" id="modal-card">
+      <button onclick="closeToolModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-molang-accent text-molang-text hover:text-molang-rose flex items-center justify-center focus:outline-none transition-colors">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+
+      <div class="flex items-center gap-4 mb-4">
+        <div id="modal-icon" class="w-12 h-12 rounded-2xl bg-molang-accent flex items-center justify-center text-molang-rose text-xl shrink-0 border border-molang-soft">
+          <!-- Icon injected dynamically -->
+        </div>
+        <div>
+          <h3 id="modal-title" class="text-xl font-bold text-molang-text">Tool Title</h3>
+          <span id="modal-category" class="text-xs font-semibold text-molang-rose bg-molang-accent px-2.5 py-0.5 rounded-full">Category</span>
+        </div>
+      </div>
+
+      <p id="modal-desc" class="text-xs sm:text-sm text-molang-text leading-relaxed mb-4">
+        Detailed description of tool experience...
+      </p>
+
+      <div class="bg-molang-bg p-3.5 rounded-2xl border border-molang-border">
+        <h4 class="text-xs font-bold text-molang-subtext mb-1">Key Workflow Highlights:</h4>
+        <p id="modal-highlight" class="text-xs text-molang-text font-medium">Highlight details here.</p>
+      </div>
+
+      <button onclick="closeToolModal()" class="w-full mt-6 py-2.5 rounded-2xl bg-molang-rose text-white text-xs font-bold hover:bg-molang-deep transition-all">
+        Close Details
+      </button>
+    </div>
+  </div>
+
+  <div class="fixed bottom-5 right-5 z-40 flex flex-col items-end">
+    <!-- Speech Bubble -->
+    <div id="mascot-bubble" class="hidden mb-2 p-3.5 bg-molang-card border border-molang-soft rounded-2xl shadow-molang max-w-xs text-xs text-molang-text relative">
+      <p id="mascot-text" class="font-bold">"Hi! I'm Sofia's Assistant Mascot! Click me for cute quotes!" 💖</p>
+      <div class="absolute -bottom-2 right-6 w-3 h-3 bg-molang-card border-b border-r border-molang-soft rotate-45"></div>
+    </div>
+
+    <!-- Mascot Button -->
+    <button id="mascot-btn" onclick="triggerMascotAction(event)" class="w-16 h-16 rounded-full bg-gradient-to-tr from-molang-accent to-white border-2 border-molang-soft shadow-molang hover:scale-110 active:scale-95 transition-all overflow-hidden flex items-center justify-center focus:outline-none" aria-label="Interactive Companion">
+      <img src="07E03E68-3256-4A01-9FB6-72AAA629338A.jpeg" alt="Companion" class="w-full h-full object-cover animate-molang-float">
+    </button>
+  </div>
+
+  <div id="toast" class="fixed top-20 right-5 z-50 transform translate-x-72 opacity-0 toast bg-molang-card border border-molang-soft shadow-molang rounded-2xl px-4 py-3 flex items-center gap-3 text-xs sm:text-sm font-semibold text-molang-text pointer-events-none transition-all duration-300">
+    <div class="w-7 h-7 rounded-full bg-molang-accent flex items-center justify-center text-molang-rose shrink-0">
+      <i class="fa-solid fa-check text-xs"></i>
+    </div>
+    <span id="toast-message">Notification message</span>
+  </div>
+
+  <footer class="bg-molang-card border-t border-molang-border py-6 text-center text-xs text-molang-subtext transition-colors duration-400">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p>&copy; 2026 Sofia Shane V. Tomarompong. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
